@@ -4,9 +4,14 @@
 #  This Makefile is based on https://github.com/jkvis/generic-cpp-template     #
 ###                                                                          ###
 
+UNAME		 = $(shell uname)
 CXX          = g++
 LDFLAGS      = -Iinclude
-CXXFLAGS     = -pedantic -Wall -march=native -fopenmp 
+ifeq ($(UNAME), Darwin)
+	CXXFLAGS = -pedantic -Wall -march=native -Xpreprocessor -fopenmp -lomp
+else
+	CXXFLAGS = -pedantic -Wall -march=native -fopenmp 
+endif
 LISTENERFLAG = -Drunlistener=1
 DEBUGFLAGS   = -O0 -ggdb3 -Wextra 
 RELEASEFLAGS = -O3 -DNDEBUG #-fwhole-program
