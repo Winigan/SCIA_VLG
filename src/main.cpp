@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include "Graph.hpp"
+
 int main(int argc, char const *argv[])
 {
     if(argc < 2)
@@ -7,6 +9,8 @@ int main(int argc, char const *argv[])
         std::cerr << "Le graphe est attendu en argument" << std::endl;
         return 1;
     }
-    std::cout << "Not implemented";
+    
+    auto a = Graph("data/graph/p2p-Gnutella08.txt");
+    a.load();
     return 0;
 }

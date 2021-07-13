@@ -2,9 +2,9 @@ UNAME		 = $(shell uname)
 CXX          = g++
 LDFLAGS      = -Iinclude
 ifeq ($(UNAME), Darwin)
-	CXXFLAGS = -pedantic -Wall -march=native -Xpreprocessor -fopenmp -lomp
+	CXXFLAGS = -pedantic -Wall -march=native -Xpreprocessor -fopenmp -lomp -std=c++17
 else
-	CXXFLAGS = -pedantic -Wall -march=native -fopenmp 
+	CXXFLAGS = -pedantic -Wall -march=native -fopenmp -std=c++17
 endif
 DEBUGFLAGS   = -O0 -ggdb3 -Wextra
 RELEASEFLAGS = -O3 -DNDEBUG
