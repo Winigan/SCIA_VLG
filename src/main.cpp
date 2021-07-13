@@ -12,5 +12,10 @@ int main(int argc, char const *argv[])
     
     auto a = Graph("data/graph/p2p-Gnutella08.txt");
     a.load();
+
+    a.compute_wcc();
+
+    std::cout << igraph_vector_size(a.get_wcc()) << "\n";
+
     return 0;
 }
