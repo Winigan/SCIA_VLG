@@ -1,5 +1,5 @@
 # Script pour build cmake et gagner du temps
-mkdir -r build
+mkdir -p build
 cd build
 cmake ..
 cmake --build .
